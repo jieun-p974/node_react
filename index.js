@@ -6,6 +6,7 @@ const app = express()
 //5000번 포트를 사용함
 const port = 5000
 const bodyParser = require('body-parser')
+const config = require('./config/key');
 // user모델 가져오기
 const { User } = require('./models/User')
 
@@ -17,10 +18,9 @@ app.use(bodyParser.json());
 
 //mongoDB 연결
 const mongoose = require('mongoose')
-mongoose.connect('mongodb+srv://dbUser:1234@cluster0.xuhf2.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',{
-   
-}).then(() => console.log('MongoDB Connected..'))
-  .catch(err => console.log(err))
+mongoose.connect(config.mongoURL)
+  .then(() => console.log('MongoDB Connected..'))
+  .catch(err => console.log(err));
 
 app.get('/', (req, res) => {
     res.send('Hello World!2022')
