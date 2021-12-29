@@ -27,6 +27,7 @@ app.get('/', (req, res) => {
   })
 
 app.post('/register',(req, res) => {
+  
   //회원 가입 할때 필요한 목록들을 client에서 가져오면
   //그것들을 DB에 넣어준다.
 
