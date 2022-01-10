@@ -31,6 +31,10 @@ app.get('/', (req, res) => {
     res.send('Hello World!2022')
   })
 
+app.get('/api/hello', (req,res)=>{
+  res.send("안녕하세요.");
+})
+
 app.post('/api/users/register',(req, res) => {
   
   //회원 가입 할때 필요한 목록들을 client에서 가져오면
