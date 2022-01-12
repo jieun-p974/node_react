@@ -6,11 +6,11 @@ import App from './App';
 import { Provider } from 'react-redux';
 import { applyMiddleware, createStore } from 'redux';
 import promiseMiddleware from 'redux-promise';
-// import { promise } from 'bcrypt/promises';
 import ReduxThunk from 'redux-thunk';
 import Reducer from './_reducers';
 // antd
 import 'antd/dist/antd.css';
+
 
 const createStoreWithMiddleware = applyMiddleware(promiseMiddleware, ReduxThunk)(createStore)
 
