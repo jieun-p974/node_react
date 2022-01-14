@@ -93,7 +93,7 @@ app.get('/api/users/auth', auth, (req, res) => {
     image: req.user.image
   })
 })
-
+//로그아웃
 app.get('/api/users/logout', auth, (req, res) => {
   User.findOneAndUpdate({ _id: req.user._id },
     { token: "" },
