@@ -96,8 +96,8 @@ app.get('/api/users/auth', auth, (req, res) => {
 //로그아웃
 app.get('/api/users/logout', auth, (req, res) => {
   User.findOneAndUpdate({ _id: req.user._id },
-    { token: "" },
-    (err, user) => {
+    { token: "" }, //토큰을 지워준다
+    (err, user) => { //콜백함수
       if(err) return res.json({ success: false, err });
       return res.status(200).send({
         success: true
